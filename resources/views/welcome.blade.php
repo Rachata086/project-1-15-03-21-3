@@ -138,14 +138,7 @@
             </a>
           </li><!-- End tab nav item -->
 
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-              <h4>หน้าที่สอง</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
       
-
         </ul>
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
@@ -159,128 +152,20 @@
 
             <div class="row gy-5">
 
-            
+            @foreach ($product as $p)
               <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu/menu-item-1.jpg)') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu/menu-item-1.jpg') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ข้าวมันไก่ต้ม</h4>
-                <p class="ingredients">
-                </p>
+                <a href="{{ asset('backend/upload/resize/'.$p->image) }}" class="glightbox"><img src="{{ asset('backend/upload/resize/'.$p->image) }}" class="menu-img img-fluid" alt=""></a>
+                <h4>{{ $p->name}}</h4>
                 <p class="price">
-                  ธรรมดา 50 บาท
-                <br/>พิเศษ 60 บาท
+                {{ $p->price}}
                 </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu/menu-item-3.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu/menu-item-3.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ข้าวมันไก่ทอด</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  ธรรมดา 50 บาท
-                <br/> พิเศษ 60 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu/menu-item-2.jpg') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu/menu-item-2.jpg') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ข้าวมันไก่รวม</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  ราคา 60 บาท
-                </p>
-              </div><!-- Menu Item -->
-            </div>
-          </div><!-- End Starter Menu Content -->
-
-          <div class="tab-pane fade" id="menu-lunch">
-
-            <div class="tab-header text-center">
-              <p></p>
-              <h3>รายการกับข้าวเเละเครื่องดื่ม</h3>
-            </div>
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/1.jpg') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/1.jpg') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ไก่เป็นกับข้าว</h4>
-                <p class="ingredients">
-        
-                </p>
-                <p class="price">
-                  120 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/2.jpg') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/2.jpg') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ข้าวมันเปล่า</h4>
-                <p class="ingredients">
-                  
-                </p>
-                <p class="price">
-                  20 บาท 
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/1.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/1.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>น้ำเเปบซี่</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                 25 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/2.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/2.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>น้ำส้มเเฟนต้า</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  25 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/3.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/3.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>ชาลิปตัน</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  25 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/4.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/4.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>น้ำเเดงเเฟนต้า</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  25 บาท
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="{{ asset('frontend/assets/img/menu1/5.png') }}" class="glightbox"><img src="{{ asset('frontend/assets/img/menu1/5.png') }}" class="menu-img img-fluid" alt=""></a>
-                <h4>น้ำเขียวเเฟนต้า</h4>
-                <p class="ingredients">
-                </p>
-                <p class="price">
-                  25 บาท
+                <p class="description">
+                {{ $p->description}}
                 </p>
               </div>
-             <!-- Menu Item -->
+              @endforeach
 
-            </div>
-          </div><!-- End Lunch Menu Content -->
-      </div>
-    </section><!-- End Menu Section -->
-
+              
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs section-bg">
       <div class="container" data-aos="fade-up">
